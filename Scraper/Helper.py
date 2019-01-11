@@ -8,14 +8,20 @@ def clean(item):
 
 # Delete the min and remove the space
 def clean_duration(duration):
-    duration = re.findall(r"\d+", duration)[0]
-    return int(duration)
+    if duration is not "Unknown":
+        duration = re.findall(r"\d+", duration)[0]
+        return int(duration)
+    else:
+        return duration
 
 
 # Delete the bracket and remove the space and make it int
 def clean_year(year):
-    year = re.findall(r"\d+", year)[0]
-    return int(year)
+    if year is not "Unknown":
+        year = re.findall(r"\d+", year)[0]
+        return int(year)
+    else:
+        return year
 
 
 # Delete , and return the int
